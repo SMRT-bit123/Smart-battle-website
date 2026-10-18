@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, ShieldCheck, Gamepad2, ArrowRight } from 'lucide-react';
 import { SmartBattleLogo } from './SmartBattleLogo';
+import { APP_CONFIG } from '../config/appConfig';
 
 interface HeroProps {
   onDownloadClick: () => void;
@@ -58,13 +59,14 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* CTA Action Bar */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
-              <button
-                onClick={onDownloadClick}
+              <a
+                href={APP_CONFIG.apkDownloadUrl || '#download'}
+                download="smart_battle.apk"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-xl shadow-lg shadow-blue-600/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 cursor-pointer"
               >
                 <Download className="w-5 h-5" />
                 <span>DOWNLOAD APK</span>
-              </button>
+              </a>
 
               <button
                 onClick={onInstallGuideClick}

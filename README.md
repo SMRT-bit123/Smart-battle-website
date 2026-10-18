@@ -45,26 +45,22 @@ git push -u origin main
 
 ---
 
-## 🔗 How to Connect the Actual APK File
+## 🔗 Direct APK Download URL
 
-When your Android APK build is ready:
-
-1. Upload the signed `.apk` file to **GitHub Releases** on `smart-battle-download`, AWS S3, Cloudflare R2, or your server.
-2. Open `src/config/appConfig.ts`.
-3. Set `apkDownloadUrl` to your direct link:
+The website is connected directly to your official Android APK file:
 
 ```typescript
 export const APP_CONFIG: AppConfig = {
   appName: 'SMART BATTLE',
   tagline: 'PLAY HARDLY WIN SMARTLY',
   version: '1.0.0',
-  // Insert your direct APK download link here:
-  apkDownloadUrl: 'https://github.com/<YOUR_USERNAME>/smart-battle-download/releases/download/v1.0.0/SMART_BATTLE.apk',
+  status: 'ready',
+  apkDownloadUrl: 'https://github.com/SMRT-bit123/Smart-battle-website/raw/refs/heads/main/smart_battle.apk',
   ...
 };
 ```
 
-4. The website will automatically activate the **"Download APK"** button with direct download action!
+All visible **"Download APK"** buttons on the site immediately trigger the direct download of `smart_battle.apk` for Android devices.
 
 ---
 

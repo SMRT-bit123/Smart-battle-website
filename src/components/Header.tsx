@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SmartBattleLogo } from './SmartBattleLogo';
-import { Download, Menu, X, ArrowDown } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
+import { APP_CONFIG } from '../config/appConfig';
 
 interface HeaderProps {
   referralCode: string | null;
@@ -88,12 +89,9 @@ export const Header: React.FC<HeaderProps> = ({ referralCode, onOpenGitHubGuide 
             </button>
 
             <a
-              href="#download"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#download');
-              }}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-lg shadow-sm shadow-blue-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 whitespace-nowrap shrink-0"
+              href={APP_CONFIG.apkDownloadUrl || '#download'}
+              download="smart_battle.apk"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-lg shadow-sm shadow-blue-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 whitespace-nowrap shrink-0 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Get APK</span>
@@ -148,15 +146,13 @@ export const Header: React.FC<HeaderProps> = ({ referralCode, onOpenGitHubGuide 
               GitHub Sync & Deployment Guide
             </button>
             <a
-              href="#download"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#download');
-              }}
-              className="flex items-center justify-center gap-2 w-full py-3 text-sm font-bold uppercase tracking-wider text-white bg-blue-600 rounded-lg shadow-sm"
+              href={APP_CONFIG.apkDownloadUrl || '#download'}
+              download="smart_battle.apk"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 w-full py-3 text-sm font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm cursor-pointer"
             >
-              <ArrowDown className="w-4 h-4" />
-              Download APK Section
+              <Download className="w-4 h-4" />
+              Download APK
             </a>
           </div>
         </div>

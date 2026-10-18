@@ -174,14 +174,14 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ referralCode }
             <div className="space-y-4">
               <a
                 href={APP_CONFIG.apkDownloadUrl!}
-                download
+                download="smart_battle.apk"
                 className="w-full flex items-center justify-center gap-3 py-4 px-6 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-base uppercase tracking-wider rounded-xl shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
               >
                 <Download className="w-5 h-5" />
                 <span>Download APK ({APP_CONFIG.version})</span>
               </a>
               <p className="text-center text-xs text-slate-400">
-                Direct download from verified official server. By downloading you agree to tournament fair play terms.
+                Direct download from verified official repository. By downloading you agree to tournament fair play terms.
               </p>
             </div>
           ) : (
@@ -253,16 +253,22 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ referralCode }
             </div>
           )}
 
-          {/* Developer Configuration Note (Explains where download URL is hooked up) */}
+          {/* APK Source Verification Note */}
           <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-400 bg-[#070c18]/80 p-4 rounded-xl border border-slate-800">
-            <div className="flex items-center gap-2">
-              <FileCode className="w-4 h-4 text-blue-400 shrink-0" />
-              <span>
-                To activate download: set <code className="text-blue-300 font-mono">apkDownloadUrl</code> in <code className="text-slate-300 font-mono">src/config/appConfig.ts</code>
+            <div className="flex items-center gap-2 truncate">
+              <FileCode className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span className="truncate">
+                Verified direct package source: <code className="text-emerald-300 font-mono text-[11px] truncate">{APP_CONFIG.apkDownloadUrl}</code>
               </span>
             </div>
             <button
-              onClick={handleCopyConfigSnippet}
+              onClick={() => {
+                if (APP_CONFIG.apkDownloadUrl) {
+                  navigator.clipboard.writeText(APP_CONFIG.apkDownloadUrl);
+                  setCopiedSetting(true);
+                  setTimeout(() => setCopiedSetting(false), 2000);
+                }
+              }}
               className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 rounded transition-colors shrink-0 cursor-pointer"
             >
               {copiedSetting ? (
@@ -273,7 +279,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ referralCode }
               ) : (
                 <>
                   <Copy className="w-3 h-3" />
-                  <span>Copy Config</span>
+                  <span>Copy APK URL</span>
                 </>
               )}
             </button>

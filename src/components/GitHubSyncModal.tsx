@@ -26,12 +26,11 @@ git remote add origin https://github.com/SMRT-bit123/SMART-BATTLE-DOWNLOAD.git
 git push -u origin main`,
     },
     {
-      title: '2. Connecting the Actual APK File When Ready',
-      description: 'Once you build or upload your signed Android APK to GitHub Releases, Cloudflare R2, or AWS S3:',
-      command: `// Open src/config/appConfig.ts and set your direct download URL:
-export const APP_CONFIG: AppConfig = {
+      title: '2. Connected Direct APK Download URL',
+      description: 'Your direct Android APK download URL is configured and active in src/config/appConfig.ts:',
+      command: `export const APP_CONFIG: AppConfig = {
   ...
-  apkDownloadUrl: "https://github.com/<YOUR_USERNAME>/${repoName}/releases/download/v1.0.0/SMART_BATTLE.apk",
+  apkDownloadUrl: "https://github.com/SMRT-bit123/Smart-battle-website/raw/refs/heads/main/smart_battle.apk",
   ...
 };`,
     },
