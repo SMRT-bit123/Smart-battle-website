@@ -1,0 +1,6 @@
+{
+  "name": "SMART BATTLE - Esports Tournament APK",
+  "description": "Official APK download and tournament platform for SMART BATTLE. Play Hardly Win Smartly. Sideload guide, referral support, and esports features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
