@@ -175,8 +175,6 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ referralCode }
               <a
                 href={APP_CONFIG.apkDownloadUrl!}
                 download="smart_battle.apk"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-3 py-4 px-6 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-base uppercase tracking-wider rounded-xl shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
               >
                 <Download className="w-5 h-5" />

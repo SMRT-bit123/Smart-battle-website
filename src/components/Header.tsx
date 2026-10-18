@@ -91,8 +91,6 @@ export const Header: React.FC<HeaderProps> = ({ referralCode, onOpenGitHubGuide 
             <a
               href={APP_CONFIG.apkDownloadUrl || '#download'}
               download="smart_battle.apk"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-lg shadow-sm shadow-blue-500/20 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 whitespace-nowrap shrink-0 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
@@ -150,8 +148,6 @@ export const Header: React.FC<HeaderProps> = ({ referralCode, onOpenGitHubGuide 
             <a
               href={APP_CONFIG.apkDownloadUrl || '#download'}
               download="smart_battle.apk"
-              target="_blank"
-              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-3 text-sm font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm cursor-pointer"
             >
