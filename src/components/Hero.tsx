@@ -60,8 +60,10 @@ export const Hero: React.FC<HeroProps> = ({
             {/* CTA Action Bar */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
               <a
-                href={APP_CONFIG.apkDownloadUrl || '#download'}
+                href={APP_CONFIG.apkDownloadUrl || 'https://github.com/SMRT-bit123/Smart-battle-website/raw/refs/heads/main/smart_battle.apk'}
                 download="smart_battle.apk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-xl shadow-lg shadow-blue-600/30 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 cursor-pointer"
               >
                 <Download className="w-5 h-5" />
